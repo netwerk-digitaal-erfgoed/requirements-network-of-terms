@@ -1,14 +1,9 @@
 <pre class='metadata'>
-Title: Your Spec Title
-Shortname: your-spec
-Level: 1
+Title: Requirements for the Network of Terms
+Shortname: nde-requirements-network-of-terms
 Status: LS
-URL: http://example.com/url-this-spec-will-live-at
-Editor: Your Name, Your Company http://example.com/your-company, your-email@example.com, http://example.com/your-personal-website
-Abstract: A short description of your spec, one or two sentences.
+Markup Shorthands: css yes, markdown yes
+URL: https://netwerk-digitaal-erfgoed.github.io/requirements-network-of-terms/
+Editor: Sjors de Valk, Dutch Digital Heritage Network https://www.netwerkdigitaalerfgoed.nl/en, sjors@sjorsdevalk.nl
+Abstract: This document describes the requirements that the Network of Terms must meet in order to be used in the Dutch Digital Heritage Network (NDE).
 </pre>
-
-Introduction {#intro}
-=====================
-
-Introduction here.
