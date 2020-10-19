@@ -7,3 +7,85 @@ URL: https://netwerk-digitaal-erfgoed.github.io/requirements-network-of-terms/
 Editor: Sjors de Valk, Dutch Digital Heritage Network https://www.netwerkdigitaalerfgoed.nl/en, sjors@sjorsdevalk.nl
 Abstract: This document describes the requirements that the Network of Terms must meet in order to be used in the Dutch Digital Heritage Network (NDE).
 </pre>
+
+Introduction {#intro}
+=====================
+
+How can users find heritage information, regardless of the institutions that manage this information?
+This will only work if institutions use the same terms to describe the same information.
+These terms come from common terminology sources such as thesauri and reference lists.
+
+Nevertheless, it can be a challenge for institutions to use terminology sources:
+sources have different ways of making their terms accessible, for example with regard to search options, metadata schemes and interfaces.
+This variety makes them difficult to use.
+The Network of Terms wants to offer a solution for this by offering a uniform way of searching in terminology sources, both functionally and technically.
+
+The Network of Terms is a so-called generic facility, a facility that is standardized and supports the network of digital heritage.
+In addition, the Network of Terms is a distributed facility, a facility that is not centrally provided by a manager, but decentralized by various managers.
+The "Network of Terms" is therefore an umbrella term to designate all instances – all "networks of terms".
+
+This document specifies the functional and non-functional requirements that the Network of Terms must meet.
+The purpose of the requirements is to make the Network of Terms as useful as possible for users,
+usually collection managers of institutions and suppliers of their collection management software.
+
+The requirements have been drawn up by the project [Standardized terms in the network](https://www.netwerkdigitaalerfgoed.nl/en/activities/usable-digital-heritage/standardized-terms/).
+The project is part of the 2019-2020 intensification program of the Dutch Digital Heritage Network.
+The requirements take the [Digital Heritage Reference Architecture 3.0](https://dera.netwerkdigitaalerfgoed.nl/) as a starting point.
+The requirements are a deepening of DERA and can supplement a future version of it.
+
+<div class="issue">
+    Include a glossary of terms and their definitions. This is preferably a separate document that can also be used
+     by other documents, such as the [[!NDE-DATASETS|Requirements for Datasets]].
+</div>
+
+Audience {#audience}
+--------------------
+
+The requirements are intended for everyone involved in implementing and making available the Network of Terms,
+such as developers and administrators.
+
+Status {#status}
+--------------------
+
+This document is a draft and not yet an official publication.
+
+Prioritization of requirements {#prioritization}
+============
+
+Each requirement has a priority. The priority follows the [MoSCoW method](https://en.wikipedia.org/wiki/MoSCoW_method):
+
+<table>
+    <thead>
+        <tr>
+            <th>Priority</th>
+            <th>Explanation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Must have</td>
+            <td>The requirement is necessary</td>
+        </tr>
+        <tr>
+            <td>Should have</td>
+            <td>The requirement is important, but not necessary<td>
+        </tr>
+        <tr>
+            <td>Could have</td>
+            <td>The requirement is desired, but not important<td>
+        </tr>
+        <tr>
+            <td>Would have</td>
+            <td>The requirement is interesting, but not desired now<td>
+        </tr>
+    </tbody>
+</table>
+
+Requirements {#requirements}
+============
+
+The requirements are both functional and non-functional.
+The functional requirements make clear which functionality the Network of Terms must offer in order to be used by users and administrators.
+Non-functional requirements describe how the Network of Terms must fulfill the functional requirements.
+The non-functional requirements are primarily intended for the IT specialists who will build the Network of Terms
+and the IT specialists who will implement the Network of Terms in users' systems, such as collection management systems.
