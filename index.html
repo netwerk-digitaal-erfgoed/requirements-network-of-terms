@@ -1223,7 +1223,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5f7b0e20, updated Tue Aug 18 15:46:28 2020 -0700" name="generator">
   <link href="https://netwerk-digitaal-erfgoed.github.io/requirements-network-of-terms/" rel="canonical">
-  <meta content="a409c10505f9a04fc1c6f7be42e9d4a9ffca0aed" name="document-revision">
+  <meta content="972a0f779befa0539999dc17cb55f95b3a4494a6" name="document-revision">
 <style>/* style-autolinks */
 
 .css.css, .property.property, .descriptor.descriptor {
@@ -1375,7 +1375,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Requirements for the Network of Terms</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-01-15">15 January 2021</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Standard, <time class="dt-updated" datetime="2021-02-15">15 February 2021</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1390,7 +1390,7 @@ dfn > a.self-link::before      { content: "#"; }</style>
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 15 January 2021,
+In addition, as of 15 February 2021,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1414,11 +1414,11 @@ Parts of this work may be from another specification document.  If so, those par
     <li>
      <a href="#requirements"><span class="secno">3</span> <span class="content">Requirements</span></a>
      <ol class="toc">
-      <li><a href="#1"><span class="secno">3.1</span> <span class="content">The Network of Terms makes terms findable via a uniform endpoint</span></a>
+      <li><a href="#1"><span class="secno">3.1</span> <span class="content">The Network of Terms makes terms findable via a uniform HTTP endpoint</span></a>
       <li><a href="#2"><span class="secno">3.2</span> <span class="content">The Network of Terms makes terms findable via an online search environment that is accessible to users</span></a>
       <li><a href="#3"><span class="secno">3.3</span> <span class="content">The Network of Terms searches terminology sources registered in the Registry</span></a>
       <li><a href="#4"><span class="secno">3.4</span> <span class="content">The Network of Terms publishes information about the terminology sources it can search via an endpoint</span></a>
-      <li><a href="#5"><span class="secno">3.5</span> <span class="content">The Network of Terms can search in one and more terminology sources</span></a>
+      <li><a href="#5"><span class="secno">3.5</span> <span class="content">The Network of Terms can search in one or more terminology sources</span></a>
       <li><a href="#6"><span class="secno">3.6</span> <span class="content">The Network of Terms queries terminology sources directly</span></a>
       <li><a href="#7"><span class="secno">3.7</span> <span class="content">The Network of Terms makes clear from which terminology sources terms originate</span></a>
       <li><a href="#8"><span class="secno">3.8</span> <span class="content">The Network of Terms explains why no terms have been found in a terminology source</span></a>
@@ -1434,7 +1434,7 @@ Parts of this work may be from another specification document.  If so, those par
       <li><a href="#18"><span class="secno">3.18</span> <span class="content">The application manager of the Network of Terms can add, edit and remove terminology sources</span></a>
       <li><a href="#19"><span class="secno">3.19</span> <span class="content">The Network of Terms has developer-friendly documentation about its interfaces</span></a>
       <li><a href="#20"><span class="secno">3.20</span> <span class="content">The Network of Terms publishes machine-readable information about its interfaces</span></a>
-      <li><a href="#21"><span class="secno">3.21</span> <span class="content">The Network of Terms has an availability of 99%</span></a>
+      <li><a href="#21"><span class="secno">3.21</span> <span class="content">The Network of Terms has an availability of at least 99%</span></a>
      </ol>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
@@ -1448,12 +1448,12 @@ Parts of this work may be from another specification document.  If so, those par
   <main>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
    <p>How can users find heritage information, regardless of the institutions that manage this information?
-This is only possible if institutions use the same terms to describe the same information.
+This is only possible if institutions use terms to describe their information.
 These terms come from common terminology sources such as thesauri and reference lists.</p>
-   <p>Nevertheless, it can be a challenge for institutions to use terminology sources:
+   <p>However, it can be a challenge for institutions to use terminology sources:
 sources have different ways of making their terms accessible, for example with regard to search options, metadata schemas and interfaces.
 This variety makes them difficult to use.
-The Network of Terms wants to provide a solution for this by offering a uniform way of searching in terminology sources, both functionally and technically.</p>
+The Network of Terms provides a solution for this by offering a uniform way of searching in terminology sources, both functionally and technically.</p>
    <p>The Network of Terms is a generic facility, a facility that supports the network of digital heritage.
 The Network of Terms also is a distributed facility, a facility that is not centrally provided by one organization, but decentralized by various organizations.
 The "Network of Terms" is therefore an umbrella term to designate all instances – all "networks of terms".</p>
@@ -1501,7 +1501,7 @@ The functional requirements make clear which functionality the Network of Terms 
 The non-functional requirements describe how the Network of Terms must fulfill the functional requirements.
 The non-functional requirements are primarily intended for the IT specialists who will build the Network of Terms
 and the IT specialists who will implement the Network of Terms in systems of users, such as collection management systems.</p>
-   <h3 class="heading settled" data-level="3.1" id="1"><span class="secno">3.1. </span><span class="content">The Network of Terms makes terms findable via a uniform endpoint</span><a class="self-link" href="#1"></a></h3>
+   <h3 class="heading settled" data-level="3.1" id="1"><span class="secno">3.1. </span><span class="content">The Network of Terms makes terms findable via a uniform HTTP endpoint</span><a class="self-link" href="#1"></a></h3>
     <strong>Priority</strong>: Must have 
    <p>The Network of Terms makes terms from terminology sources easy to find.
 Users — or more precisely: their systems — can query the Network of Terms without having to know the variety of the underlying terminology sources,
@@ -1513,9 +1513,9 @@ Other interfaces, data formats or metadata schemas may be added later.</p>
    <div class="note" role="note"> <strong>Discussion</strong>: GraphQL is a query language, but it doesn’t support search operators, such as wildcards.
     Which standard or best practice should the Network of Terms use for this? </div>
    <div class="note" role="note"> <strong>Discussion</strong>: is SKOS sufficient to express all information about terms?
-    For example, terminology source A can use metadata schema X to indicate the "status" of a term (such as a candidate term),
+    For example, terminology source A can use metadata schema X to indicate the status of a term (such as a candidate term),
     while terminology source B can use metadata schema Y for this.
-    SKOS has no support to describe the "status". Should a different metadata schema be used for this — or an own ontology? </div>
+    SKOS has no support to describe the status. Should a different metadata schema be used for this — or an own ontology? </div>
    <p>A uniform endpoint means that the Network of Terms offers the same search capabilities for all terminology sources.
 This, however, only applies to sources that meet
 the <a href="https://netwerk-digitaal-erfgoed.github.io/requirements-terminologiebronnen/">Requirements for terminology sources</a> (in Dutch).
@@ -1534,7 +1534,7 @@ An example of such an environment is the <a href="https://termennetwerk.netwerkd
    <p>The Network of Terms searches terminology sources, but does not determine which sources can be used.
 For this purpose the Network of Terms relies on the Registry. The Registry is the generic facility of the Dutch Digital Heritage Network
 that keeps track of the datasets in the network, including the available terminology sources.
-Use of the Registry improves clarity: anyone — both man and machine — who wants to do anything with datasets can use the Registry as an entry point.</p>
+Use of the Registry improves clarity: anyone — both human and machine — who wants to do anything with datasets can use the Registry as an entry point.</p>
    <p>Use of the Registry does not imply that the Network of Terms is obliged to make all terminology sources in the Registry searchable.
 The Network of Terms can choose to use a selection of sources, depending on its purpose and target audience.
 This may be the case, for example, with distributed instances of the Network of Terms.
@@ -1561,7 +1561,7 @@ For example: an instance of the Network of Terms can choose to make only specifi
       <td>
      <tr>
       <td>Alternate name
-      <td>The altername name of the terminology source, if any. E.g. "WW2 Thesaurus"
+      <td>The altername name of the terminology source. Often (but not always) an abbreviation/short form of the name, e.g. "WW2 Thesaurus"
       <td>
      <tr>
       <td>Name of organization
@@ -1569,7 +1569,7 @@ For example: an instance of the Network of Terms can choose to make only specifi
       <td>
      <tr>
       <td>Alternate name of organization
-      <td>The altername name of the organization that manages the terminology source, if any. E.g. "NIOD"
+      <td>The altername name of the organization that manages the terminology source, e.g. "NIOD"
       <td>
      <tr>
       <td>Description
@@ -1583,7 +1583,7 @@ As with <a href="#1">requirement 1</a> the endpoint will use <a href="https://gr
 For publishing information about the managing organizations <a href="https://schema.org/">Schema.org</a> is used as metadata schema.</p>
    <div class="note" role="note"> <strong>Discussion</strong>: is it useful to also publish this information as RDF with e.g. DCAT or Schema.org as metadata schemas?
     In keeping with the <a data-link-type="biblio" href="#biblio-nde-datasets">Requirements for Datasets</a>, this allows applications to use the information with Linked Data technology. </div>
-   <h3 class="heading settled" data-level="3.5" id="5"><span class="secno">3.5. </span><span class="content">The Network of Terms can search in one and more terminology sources</span><a class="self-link" href="#5"></a></h3>
+   <h3 class="heading settled" data-level="3.5" id="5"><span class="secno">3.5. </span><span class="content">The Network of Terms can search in one or more terminology sources</span><a class="self-link" href="#5"></a></h3>
     <strong>Priority</strong>: Must have 
    <p>Some users want the Network of Terms to find terms in a <em>particular</em> terminology source.
 For example: a user may want to use the WW2 Thesaurus because it best describes the user’s heritage information.
@@ -1592,7 +1592,7 @@ The Network of Terms should support this by having users indicate which source m
 Users want to perform these searches as efficiently as possible: they do not want to have to submit their search query multiple times to multiple sources, but once.
 The Network of Terms should support this by having users indicate which sources must be queried.
 The Network of Terms then searches these sources and returns all matching terms in one result set.</p>
-   <p>For optimal performance the Network of Terms searches terminology sources parallelly, not sequentially.</p>
+   <p>For optimal performance the Network of Terms searches terminology sources in parallel, not sequentially.</p>
    <p>Terminology sources have different response times, for example depending on their technical infrastructure and the users' queries.
 Since the Network of Terms only returns a search result to the user when all sources have completed their search,
 the performance of the Network of Terms is determined by the source with the lowest performance.
@@ -1611,12 +1611,12 @@ then the source cannot be (fully) used by the Network of Terms.</p>
     <strong>Priority</strong>: Must have 
    <p>Users want to search in multiple terminology sources at the same time (see <a href="#5">requirement 5</a>).
 For the terms it finds, the Network of Terms must make clear from which sources they originate.
-This way users can make a choice. For instance: if a user searches in two sources and both sources return results, he can decide
+This way users can make a choice. For instance: if users search in two sources and both sources return results, they can decide
 to use a term from one source, not the other.</p>
    <h3 class="heading settled" data-level="3.8" id="8"><span class="secno">3.8. </span><span class="content">The Network of Terms explains why no terms have been found in a terminology source</span><a class="self-link" href="#8"></a></h3>
     <strong>Priority</strong>: Must have 
    <p>The Network of Terms queries terminology sources directly (see <a href="#6">requirement 6</a>).
-If a terminology source does not return results then the Network of Terms must make clear why this is the case.
+If a source does not return results then the Network of Terms must make clear why this is the case.
 This allows users to take this into account when interpreting the results.</p>
    <p>There are two reasons why a terminology source does not return results:</p>
    <ol>
@@ -1683,9 +1683,9 @@ This way the Network of Terms can provide uniform information to users, regardle
    <p>Users want to be able to search for terms in a specific language.
 For example: one user searches in Dutch (<code>Concentratiekampen</code>), the other in German (<code>Konzentrationslager</code>) and yet another in English (<code>Concentration camps</code>).
 Therefore users must be able to submit their queries to the Network of Terms in a specific language and
-the Network of Terms must search for terms that match the specified language.</p>
+the Network of Terms must search for terms that match the language.</p>
    <p>The language support of the Network of Terms depends on the language capabilities of the underlying terminology sources.
-If a user indicates that he wants to find terms in English, but a terminology source does not have English translations available for all terms,
+If users indicate that they wants to find terms in English, but a terminology source does not have English translations available for all terms,
 then the Network of Terms will not find these terms (even though the terms may be available in other languages).</p>
    <div class="note" role="note"> <strong>Discussion</strong>: should the Network of Terms have a default language?
     In other words: if a user does not specify a language, does the Network of Terms automatically search for Dutch terms?
@@ -1695,16 +1695,16 @@ then the Network of Terms will not find these terms (even though the terms may b
    <p>Users want to search as efficiently as possible.
 Therefore they do not want to enter an entire query before being able to search.
 Instead, they want to enter part of a query. Every keystroke should then trigger a search;
-the search should return terms matching the exact input but also terms that start with the input.
+the search should return terms that match the exact input but also terms that partially match the input.
 For example: this way the query <code>Max</code> results in the term "Max" but also in the automatically completed terms "Max Lewin" and "Maximilian of Egmont".</p>
    <p>The support of auto-completion by the Network of Terms depends on the capabilities of the underlying terminology sources.
 If a terminology source does not have auto-completion, then the Network of Terms cannot provide it for that source either.</p>
    <h3 class="heading settled" data-level="3.12" id="12"><span class="secno">3.12. </span><span class="content">The Network of Terms searches specific parts of terminology sources</span><a class="self-link" href="#12"></a></h3>
     <strong>Priority</strong>: Should have 
    <p>Users want to get as little noise as possible in the terms that the Network of Terms finds.
-For example, if a terminology source contains terms related to both persons and organizations, but a user is only interested in organizations,
-then he does not want to find persons.
-In that case, the user wants to be able to indicate in his search that he is only looking for organizations.
+For example, if a terminology source contains terms related to both persons and organizations, but users are only interested in organizations,
+then they don’t want to find persons.
+In that case, users wants to be able to indicate in their search that they are only looking for organizations.
 Based on this information, the Network of Terms can then search specific parts of a terminology source rather than the whole source.</p>
    <p>The Network of Terms can only search in specific parts of terminology sources if they support this.
 For example: a source can use <a href="https://www.w3.org/TR/skos-primer/#secscheme">concept schemes</a> for grouping related terms (e.g. "organizations")
@@ -1723,7 +1723,7 @@ This can be done with wildcards. For example, the query <code>*sword</code>. The
 In that case they want to ask the Network of Terms a fairly accurate question.
 This can be done with Boolean operators. For example, the query <code>broadsword AND scimitar</code>.</p>
    <p>The Network of Terms can only search with operators if terminology sources support this.
-If a terminology source doesn’t, then the Network of Terms cannot not provide this functionality for that source either.</p>
+If a terminology source doesn’t, then the Network of Terms cannot provide this functionality for that source either.</p>
    <div class="note" role="note"> <strong>Discussion</strong>: this requirement can be fulfilled in various ways.
     For example, the Network of Terms can offer its own uniform operators to users; the Network of Terms then translates these
     into operators supported by individual terminology sources. This is quite complicated, though.
@@ -1735,9 +1735,9 @@ If a terminology source doesn’t, then the Network of Terms cannot not provide 
 This query contains one or more words, such as <code>Zwaard</code> or <code>Haarlem</code>.
 To prevent getting too many results, users want to complement their search query with additional criteria: "status" and "parent term".
 These criteria narrow the results.</p>
-   <p>With "status" a user can indicate that he only wants to find terms with this status.
+   <p>With "status" users can indicate that they only want to find terms with this status.
 For example: only approved terms, no candidate terms.</p>
-   <p>With "parent term" a user can indicate that he only wants to find terms with this parent term.
+   <p>With "parent term" users can indicate that they only want to find terms with this parent term.
 For example: only places that belong to "The Netherlands", not to "South Africa".</p>
    <p>The Network of Terms can only search for terms with a certain status or parent term if the terminology sources support this.
 If a terminology source doesn’t, then the Network of Terms cannot provide this functionality for that source either.</p>
@@ -1758,42 +1758,43 @@ For example: it does not correct, enrich or re-sort terms - 'what you see is wha
    <p>The Network of Terms does change the data structure with which terminology sources publish their terms.
 This change is necessary in order to get a uniform, source-independent structure (see <a href="#1">requirement 1</a>).</p>
    <h3 class="heading settled" data-level="3.17" id="17"><span class="secno">3.17. </span><span class="content">The Network of Terms monitors and displays the status of terminology sources</span><a class="self-link" href="#17"></a></h3>
-    <strong>Priority</strong>: Must have 
+    <strong>Priority</strong>: Should have 
    <p>The Network of Terms queries terminology sources directly (see <a href="#6">requirement 6</a>).
 This means that there is a direct dependence between systems: if the system of a terminology source is, for whatever reason, unreachable,
 the Network of Terms cannot send the users' queries to the source and function properly.
 In order to quickly gain insight into problems, the Network of Terms keeps track of the status of terminology sources.
 The status makes clear whether or not the sources are reachable.
-If this is not the case, the application manager of the Network of Terms can take action,
-for example by contacting the owner of the source or by informing his users.</p>
+If this is not the case, the application managers of the Network of Terms can take action,
+for example by contacting the owner of the source or by informing their users.</p>
    <p>The Network of Terms provides a status page where the status of each terminology source is displayed. The status page is publicly accessible.</p>
    <h3 class="heading settled" data-level="3.18" id="18"><span class="secno">3.18. </span><span class="content">The application manager of the Network of Terms can add, edit and remove terminology sources</span><a class="self-link" href="#18"></a></h3>
     <strong>Priority</strong>: Should have 
    <p>Terminology sources have their own protocols and data structures for querying and expressing terms.
 The Network of Terms knows about these, as well as how the information about terms is mapped
 into the uniform, source-independent data structure of the Network of Terms.</p>
-   <p>The application manager of the Network of Terms maintains the configuration about sources and mappings.
-He can add, edit and remove sources without the intervention of a software developer.</p>
+   <p>The application managers of the Network of Terms maintain the configuration about sources and mappings.
+They can add, edit and remove sources without the intervention of a software developer.</p>
    <div class="note" role="note"> <strong>Discussion</strong>: this requirement needs further eloboration.
-    For example: is it sufficient if an application manager can modify the configuration files of the Network of Terms?
-    Or does he need a user interface for this? </div>
+    For example: is it sufficient if application managers can modify the configuration files of the Network of Terms?
+    Or do they need a user interface for this? </div>
    <h3 class="heading settled" data-level="3.19" id="19"><span class="secno">3.19. </span><span class="content">The Network of Terms has developer-friendly documentation about its interfaces</span><a class="self-link" href="#19"></a></h3>
     <strong>Priority</strong>: Must have 
    <p>Software developers of systems of users want to be able to implement the Network of Terms easily.
 Therefore the Network of Terms must have documentation that is accessible to developers.
 The documentation describes the interfaces of the Network of Terms, such as the query language, data format and metadata schemas.
-The documentation must be generated from the source code of the Network of Terms so that it is always up-to-date, e.g. with OpenAPI.</p>
+The documentation must be generated from the source code of the Network of Terms so that it is always up-to-date, e.g. with <a href="https://www.openapis.org/">OpenAPI</a>.</p>
    <h3 class="heading settled" data-level="3.20" id="20"><span class="secno">3.20. </span><span class="content">The Network of Terms publishes machine-readable information about its interfaces</span><a class="self-link" href="#20"></a></h3>
     <strong>Priority</strong>: Should have 
    <p>The Network of Terms is primarily used by systems of users, not directly by users.
 Therefore the Network of Terms should not only have documentation for software developers (see <a href="#19">requirement 19</a>),
 but also publish machine-readable information about how its interfaces can be used by systems.
 This information makes the Network of Terms self-descriptive.
-The information makes clear, for example, which interfaces there are and which HTTP methods they support (such as POST or GET).</p>
-   <h3 class="heading settled" data-level="3.21" id="21"><span class="secno">3.21. </span><span class="content">The Network of Terms has an availability of 99%</span><a class="self-link" href="#21"></a></h3>
+The information makes clear, for example, which endpoints there are and which HTTP methods they support (such as POST or GET).</p>
+   <h3 class="heading settled" data-level="3.21" id="21"><span class="secno">3.21. </span><span class="content">The Network of Terms has an availability of at least 99%</span><a class="self-link" href="#21"></a></h3>
     <strong>Priority</strong>: Must have 
    <p>The Network of Terms is a generic facility that can be used at all times by all participants in the Dutch Digital Heritage Network.
-Therefore the Network of Terms must have a high availability of 99%.</p>
+Therefore the Network of Terms must have a high availability of at least 99%.</p>
+   <div class="note" role="note"> <strong>Discussion</strong>: is 99% good enough for the Network of Terms to be used 'at all times'? </div>
    <div class="note" role="note"> <strong>Discussion</strong>: does this availability apply to all instances of the Network of Terms?
     Or can individual instances have a different availability? </div>
    <p>Note that this availability only applies to the Network of Terms, not to the terminology sources that it queries;

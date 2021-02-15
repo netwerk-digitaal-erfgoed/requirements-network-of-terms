@@ -12,13 +12,13 @@ Introduction {#intro}
 =====================
 
 How can users find heritage information, regardless of the institutions that manage this information?
-This is only possible if institutions use the same terms to describe the same information.
+This is only possible if institutions use terms to describe their information.
 These terms come from common terminology sources such as thesauri and reference lists.
 
-Nevertheless, it can be a challenge for institutions to use terminology sources:
+However, it can be a challenge for institutions to use terminology sources:
 sources have different ways of making their terms accessible, for example with regard to search options, metadata schemas and interfaces.
 This variety makes them difficult to use.
-The Network of Terms wants to provide a solution for this by offering a uniform way of searching in terminology sources, both functionally and technically.
+The Network of Terms provides a solution for this by offering a uniform way of searching in terminology sources, both functionally and technically.
 
 The Network of Terms is a generic facility, a facility that supports the network of digital heritage.
 The Network of Terms also is a distributed facility, a facility that is not centrally provided by one organization, but decentralized by various organizations.
@@ -90,7 +90,7 @@ The non-functional requirements describe how the Network of Terms must fulfill t
 The non-functional requirements are primarily intended for the IT specialists who will build the Network of Terms
 and the IT specialists who will implement the Network of Terms in systems of users, such as collection management systems.
 
-The Network of Terms makes terms findable via a uniform endpoint {#1}
+The Network of Terms makes terms findable via a uniform HTTP endpoint {#1}
 --------------------
 **Priority**: Must have
 
@@ -110,9 +110,9 @@ Other interfaces, data formats or metadata schemas may be added later.
 
 <div class="note">
     **Discussion**: is SKOS sufficient to express all information about terms?
-    For example, terminology source A can use metadata schema X to indicate the "status" of a term (such as a candidate term),
+    For example, terminology source A can use metadata schema X to indicate the status of a term (such as a candidate term),
     while terminology source B can use metadata schema Y for this.
-    SKOS has no support to describe the "status". Should a different metadata schema be used for this — or an own ontology?
+    SKOS has no support to describe the status. Should a different metadata schema be used for this — or an own ontology?
 </div>
 
 A uniform endpoint means that the Network of Terms offers the same search capabilities for all terminology sources.
@@ -139,7 +139,7 @@ The Network of Terms searches terminology sources registered in the Registry {#3
 The Network of Terms searches terminology sources, but does not determine which sources can be used.
 For this purpose the Network of Terms relies on the Registry. The Registry is the generic facility of the Dutch Digital Heritage Network
 that keeps track of the datasets in the network, including the available terminology sources.
-Use of the Registry improves clarity: anyone — both man and machine — who wants to do anything with datasets can use the Registry as an entry point.
+Use of the Registry improves clarity: anyone — both human and machine — who wants to do anything with datasets can use the Registry as an entry point.
 
 Use of the Registry does not imply that the Network of Terms is obliged to make all terminology sources in the Registry searchable.
 The Network of Terms can choose to use a selection of sources, depending on its purpose and target audience.
@@ -175,7 +175,7 @@ The Network of Terms publishes the following information for each terminology so
         </tr>
         <tr>
             <td>Alternate name</td>
-            <td>The altername name of the terminology source, if any. E.g. "WW2 Thesaurus"<td>
+            <td>The altername name of the terminology source. Often (but not always) an abbreviation/short form of the name, e.g. "WW2 Thesaurus"<td>
         </tr>
         <tr>
             <td>Name of organization</td>
@@ -183,7 +183,7 @@ The Network of Terms publishes the following information for each terminology so
         </tr>
         <tr>
             <td>Alternate name of organization</td>
-            <td>The altername name of the organization that manages the terminology source, if any. E.g. "NIOD"<td>
+            <td>The altername name of the organization that manages the terminology source, e.g. "NIOD"<td>
         </tr>
         <tr>
             <td>Description</td>
@@ -204,7 +204,7 @@ For publishing information about the managing organizations [Schema.org](https:/
     In keeping with the [[!NDE-DATASETS|Requirements for Datasets]], this allows applications to use the information with Linked Data technology.
 </div>
 
-The Network of Terms can search in one and more terminology sources {#5}
+The Network of Terms can search in one or more terminology sources {#5}
 --------------------
 **Priority**: Must have
 
@@ -217,7 +217,7 @@ Users want to perform these searches as efficiently as possible: they do not wan
 The Network of Terms should support this by having users indicate which sources must be queried.
 The Network of Terms then searches these sources and returns all matching terms in one result set.
 
-For optimal performance the Network of Terms searches terminology sources parallelly, not sequentially.
+For optimal performance the Network of Terms searches terminology sources in parallel, not sequentially.
 
 Terminology sources have different response times, for example depending on their technical infrastructure and the users' queries.
 Since the Network of Terms only returns a search result to the user when all sources have completed their search,
@@ -244,7 +244,7 @@ The Network of Terms makes clear from which terminology sources terms originate 
 
 Users want to search in multiple terminology sources at the same time (see [requirement 5](#5)).
 For the terms it finds, the Network of Terms must make clear from which sources they originate.
-This way users can make a choice. For instance: if a user searches in two sources and both sources return results, he can decide
+This way users can make a choice. For instance: if users search in two sources and both sources return results, they can decide
 to use a term from one source, not the other.
 
 The Network of Terms explains why no terms have been found in a terminology source {#8}
@@ -252,7 +252,7 @@ The Network of Terms explains why no terms have been found in a terminology sour
 **Priority**: Must have
 
 The Network of Terms queries terminology sources directly (see [requirement 6](#6)).
-If a terminology source does not return results then the Network of Terms must make clear why this is the case.
+If a source does not return results then the Network of Terms must make clear why this is the case.
 This allows users to take this into account when interpreting the results.
 
 There are two reasons why a terminology source does not return results:
@@ -338,10 +338,10 @@ The Network of Terms searches for terms in a specific language {#10}
 Users want to be able to search for terms in a specific language.
 For example: one user searches in Dutch (`Concentratiekampen`), the other in German (`Konzentrationslager`) and yet another in English (`Concentration camps`).
 Therefore users must be able to submit their queries to the Network of Terms in a specific language and
-the Network of Terms must search for terms that match the specified language.
+the Network of Terms must search for terms that match the language.
 
 The language support of the Network of Terms depends on the language capabilities of the underlying terminology sources.
-If a user indicates that he wants to find terms in English, but a terminology source does not have English translations available for all terms,
+If users indicate that they wants to find terms in English, but a terminology source does not have English translations available for all terms,
 then the Network of Terms will not find these terms (even though the terms may be available in other languages).
 
 <div class="note">
@@ -357,7 +357,7 @@ The Network of Terms automatically completes queries {#11}
 Users want to search as efficiently as possible.
 Therefore they do not want to enter an entire query before being able to search.
 Instead, they want to enter part of a query. Every keystroke should then trigger a search;
-the search should return terms matching the exact input but also terms that start with the input.
+the search should return terms that match the exact input but also terms that partially match the input.
 For example: this way the query `Max` results in the term "Max" but also in the automatically completed terms "Max Lewin" and "Maximilian of Egmont".
 
 The support of auto-completion by the Network of Terms depends on the capabilities of the underlying terminology sources.
@@ -368,9 +368,9 @@ The Network of Terms searches specific parts of terminology sources {#12}
 **Priority**: Should have
 
 Users want to get as little noise as possible in the terms that the Network of Terms finds.
-For example, if a terminology source contains terms related to both persons and organizations, but a user is only interested in organizations,
-then he does not want to find persons.
-In that case, the user wants to be able to indicate in his search that he is only looking for organizations.
+For example, if a terminology source contains terms related to both persons and organizations, but users are only interested in organizations,
+then they don't want to find persons.
+In that case, users wants to be able to indicate in their search that they are only looking for organizations.
 Based on this information, the Network of Terms can then search specific parts of a terminology source rather than the whole source.
 
 The Network of Terms can only search in specific parts of terminology sources if they support this.
@@ -398,7 +398,7 @@ In that case they want to ask the Network of Terms a fairly accurate question.
 This can be done with Boolean operators. For example, the query `broadsword AND scimitar`.
 
 The Network of Terms can only search with operators if terminology sources support this.
-If a terminology source doesn't, then the Network of Terms cannot not provide this functionality for that source either.
+If a terminology source doesn't, then the Network of Terms cannot provide this functionality for that source either.
 
 <div class="note">
     **Discussion**: this requirement can be fulfilled in various ways.
@@ -417,10 +417,10 @@ This query contains one or more words, such as `Zwaard` or `Haarlem`.
 To prevent getting too many results, users want to complement their search query with additional criteria: "status" and "parent term".
 These criteria narrow the results.
 
-With "status" a user can indicate that he only wants to find terms with this status.
+With "status" users can indicate that they only want to find terms with this status.
 For example: only approved terms, no candidate terms.
 
-With "parent term" a user can indicate that he only wants to find terms with this parent term.
+With "parent term" users can indicate that they only want to find terms with this parent term.
 For example: only places that belong to "The Netherlands", not to "South Africa".
 
 The Network of Terms can only search for terms with a certain status or parent term if the terminology sources support this.
@@ -456,15 +456,15 @@ This change is necessary in order to get a uniform, source-independent structure
 
 The Network of Terms monitors and displays the status of terminology sources {#17}
 --------------------
-**Priority**: Must have
+**Priority**: Should have
 
 The Network of Terms queries terminology sources directly (see [requirement 6](#6)).
 This means that there is a direct dependence between systems: if the system of a terminology source is, for whatever reason, unreachable,
 the Network of Terms cannot send the users' queries to the source and function properly.
 In order to quickly gain insight into problems, the Network of Terms keeps track of the status of terminology sources.
 The status makes clear whether or not the sources are reachable.
-If this is not the case, the application manager of the Network of Terms can take action,
-for example by contacting the owner of the source or by informing his users.
+If this is not the case, the application managers of the Network of Terms can take action,
+for example by contacting the owner of the source or by informing their users.
 
 The Network of Terms provides a status page where the status of each terminology source is displayed. The status page is publicly accessible.
 
@@ -476,13 +476,13 @@ Terminology sources have their own protocols and data structures for querying an
 The Network of Terms knows about these, as well as how the information about terms is mapped
 into the uniform, source-independent data structure of the Network of Terms.
 
-The application manager of the Network of Terms maintains the configuration about sources and mappings.
-He can add, edit and remove sources without the intervention of a software developer.
+The application managers of the Network of Terms maintain the configuration about sources and mappings.
+They can add, edit and remove sources without the intervention of a software developer.
 
 <div class="note">
     **Discussion**: this requirement needs further eloboration.
-    For example: is it sufficient if an application manager can modify the configuration files of the Network of Terms?
-    Or does he need a user interface for this?
+    For example: is it sufficient if application managers can modify the configuration files of the Network of Terms?
+    Or do they need a user interface for this?
 </div>
 
 The Network of Terms has developer-friendly documentation about its interfaces {#19}
@@ -492,7 +492,7 @@ The Network of Terms has developer-friendly documentation about its interfaces {
 Software developers of systems of users want to be able to implement the Network of Terms easily.
 Therefore the Network of Terms must have documentation that is accessible to developers.
 The documentation describes the interfaces of the Network of Terms, such as the query language, data format and metadata schemas.
-The documentation must be generated from the source code of the Network of Terms so that it is always up-to-date, e.g. with OpenAPI.
+The documentation must be generated from the source code of the Network of Terms so that it is always up-to-date, e.g. with [OpenAPI](https://www.openapis.org/).
 
 The Network of Terms publishes machine-readable information about its interfaces {#20}
 --------------------
@@ -502,14 +502,18 @@ The Network of Terms is primarily used by systems of users, not directly by user
 Therefore the Network of Terms should not only have documentation for software developers (see [requirement 19](#19)),
 but also publish machine-readable information about how its interfaces can be used by systems.
 This information makes the Network of Terms self-descriptive.
-The information makes clear, for example, which interfaces there are and which HTTP methods they support (such as POST or GET).
+The information makes clear, for example, which endpoints there are and which HTTP methods they support (such as POST or GET).
 
-The Network of Terms has an availability of 99% {#21}
+The Network of Terms has an availability of at least 99% {#21}
 --------------------
 **Priority**: Must have
 
 The Network of Terms is a generic facility that can be used at all times by all participants in the Dutch Digital Heritage Network.
-Therefore the Network of Terms must have a high availability of 99%.
+Therefore the Network of Terms must have a high availability of at least 99%.
+
+<div class="note">
+    **Discussion**: is 99% good enough for the Network of Terms to be used 'at all times'?
+</div>
 
 <div class="note">
     **Discussion**: does this availability apply to all instances of the Network of Terms?
