@@ -175,7 +175,7 @@ The Network of Terms publishes the following information for each terminology so
         </tr>
         <tr>
             <td>Alternate name</td>
-            <td>The altername name of the terminology source. Often (but not always) an abbreviation/short form of the name, e.g. "WW2 Thesaurus"<td>
+            <td>The alternate name of the terminology source. Often (but not always) an abbreviation/short form of the name, e.g. "WW2 Thesaurus"<td>
         </tr>
         <tr>
             <td>Name of organization</td>
@@ -183,7 +183,7 @@ The Network of Terms publishes the following information for each terminology so
         </tr>
         <tr>
             <td>Alternate name of organization</td>
-            <td>The altername name of the organization that manages the terminology source, e.g. "NIOD"<td>
+            <td>The alternate name of the organization that manages the terminology source, e.g. "NIOD"<td>
         </tr>
         <tr>
             <td>Description</td>
@@ -292,7 +292,7 @@ Users want to see specific information per found term so that they can decide wh
         </tr>
         <tr>
             <td>Alternative label</td>
-            <td>The alternative label or altername name of the term, e.g. a synonym</td>
+            <td>The alternative label or alternate name of the term, e.g. a synonym</td>
             <td>No</td>
         </tr>
         <tr>
